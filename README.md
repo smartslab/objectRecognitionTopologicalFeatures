@@ -2,8 +2,15 @@
 Code repository for methods proposed in 'Vision-Based Object Recognition in Indoor Environments using Topologically Persistent Features'
 
 ## Dataset
+The UW Indoor Scenes (UW-IS) dataset used in the above paper can be found [here](https://data.mendeley.com/datasets/dxzf29ttyh/).
 
 ## Requirements
+* Tensorflow
+* Keras
+* giotto-tda=0.2.2
+* persim=0.1.2
+* Python 3.6
+
 
 ## Usage
 * ### Segmentation map generation steps:
@@ -33,6 +40,7 @@ Code repository for methods proposed in 'Vision-Based Object Recognition in Indo
 8. Use segMapUtils/cropPredsObjectWise.py to obtain cropped object images from the scene segmentation map.
 9. Run loadmodel_inference.py again (using the same trained model) to generate object segmentatipn maps for all the cropped object images.
 
+At this stage, object segmentation maps would have the following filename structure <sceneImageName>_<cropId>_cropped.png. Before moving to the next step, all the object segmentation maps are labeled with appropriate category id. The steps in persistent feature extraction and recognition assume the following filename structure: <sceneImageName>_<cropId>_cropped_obj<category id>.png
 
 * ### Persistent feature extraction and recognition steps:
   All the steps below refer to code files under persistentFeatures.
