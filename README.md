@@ -6,9 +6,9 @@ Code repository for methods proposed in 'Vision-Based Object Recognition in Indo
 ## Requirements
 
 ## Usage
-* #### Segmentation map generation steps:
+* ### Segmentation map generation steps:
 1. Install the Deeplab implementation available through Tensorflow models following the installation instructions [here](https://github.com/tensorflow/models/blob/master/research/deeplab/g3doc/installation.md) 
-2. Under the tensorflow/models/resarch/deeplab directory create the following recommended directory structure. (The files train_uwis.sh, export_uwis.sh, and convert_uwis.sh can be found under segMapUtils fold in this repository)
+2. Under the tensorflow/models/resarch/deeplab directory create the following recommended directory structure. (The files train_uwis.sh, export_uwis.sh, and convert_uwis.sh can be found under the segMapUtils folder in this repository)
 
 ```
 + deeplab
@@ -34,4 +34,10 @@ Code repository for methods proposed in 'Vision-Based Object Recognition in Indo
 9. Run loadmodel_inference.py again (using the same trained model) to generate object segmentatipn maps for all the cropped object images.
 
 
-* #### Persistent feature extraction and recognition steps:
+* ### Persistent feature extraction and recognition steps:
+  All the steps below refer to code files under persistentFeatures.
+1. Generate persistence diagrams for the object segmentation maps using generatePDs.py 
+2. To generate sparse PI features from the persistence diagrams run generatePIs.py followed by sparseSamplingPIs.py. Alternatively generate amplitude features using generateAmplitude.py
+3. Train recognition network for sparse PI features using trainRecognitSparsePI.py. Alternatively, train recognition network for amplitude features using trainRecognitAmplitude.py
+4. To test the performance of the recognition networks in the same environment that they are trained on use predictFromSparsePIs_test_trainEnv.py or predictFromAmplitude_test_trainEnv.py as appropriate.
+5. To test the performance of the recognition networks in unseen environments use predictFromSparsePIs_test_testEnv.py or predictFromAmplitude_test_testEnv.py as appropriate.
