@@ -14,6 +14,7 @@ Code repository for methods proposed in 'Vision-Based Object Recognition in Indo
 + deeplab
   - train_uwis.sh
   - export_uwis.sh
+  - loadmodel_inference.py
   + datasets (Note: merge this folder with the pre-existing datasets folder)
       - convert_uwis.sh
       + uwis
@@ -25,12 +26,12 @@ Code repository for methods proposed in 'Vision-Based Object Recognition in Indo
 ```   
   
 3. Modify the datasets/build_voc2012_data.py and datasets/data_generator.py for the UW-IS dataset.
-4. Use segMapUtils/convertToRaw.py to convert binary segmentation maps to raw annotations (pixel value indicates class labels). Then use segMapUtils/createTrainValSets.py to generate the training and validation sets for training the DeepLabv3+ model. Run convert_uwis.sh to convert annotations into tensorflow records for the model
+4. Use segMapUtils/convertToRaw.py to convert binary segmentation maps to raw annotations (pixel value indicates class labels). Then use segMapUtils/createTrainValSets.py to generate the training and validation sets for training the DeepLabv3+ model. Run convert_uwis.sh from within the deeplab/datasets directory to convert annotations into tensorflow records for the model
 5. Place appropriate initial checkpoint available from [here](https://github.com/tensorflow/models/tree/master/research/deeplab) in the init_models folder
-6. Use train_uwis.sh followed by export_uwis.sh to train a DeepLabv3+ model and to export the trained model.
-7. Use segMapUtils/loadmodel_inference.py to generate segmentation maps for scene images using the trained model.
+6. Use train_uwis.sh followed by export_uwis.sh from within the deeplab directory to train a DeepLabv3+ model and to export the trained model, respectively.
+7. Run loadmodel_inference.py from within the deeplab directory to generate segmentation maps for scene images using the trained model.
 8. Use segMapUtils/cropPredsObjectWise.py to obtain cropped object images from the scene segmentation map.
-9. Use segMapUtils/loadmodel_inference.py again (using the same trained model) to generate object segmentatipn maps for all the cropped object images.
+9. Run loadmodel_inference.py again (using the same trained model) to generate object segmentatipn maps for all the cropped object images.
 
 
 * #### Persistent feature extraction and recognition steps:
