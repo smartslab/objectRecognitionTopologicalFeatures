@@ -1,11 +1,11 @@
 # Vision-Based Object Recognition in Indoor Environments using Topologically Persistent Features
-Code repository for methods proposed in 'Vision-Based Object Recognition in Indoor Environments using Topologically Persistent Features'
+Code repository for methods proposed in 'Vision-Based Object Recognition in Indoor Environments using Topologically Persistent Features' [[Pre-print]](https://arxiv.org/abs/2010.03196)
 
 ## Dataset
 The UW Indoor Scenes (UW-IS) dataset used in the above paper can be found [here](https://data.mendeley.com/datasets/dxzf29ttyh/).
 
 ## Requirements
-* Tensorflow
+* [Tensorflow Models DeepLabv3+](https://github.com/tensorflow/models/tree/master/research/deeplab)
 * Keras
 * giotto-tda=0.2.2
 * persim=0.1.2
@@ -13,7 +13,14 @@ The UW Indoor Scenes (UW-IS) dataset used in the above paper can be found [here]
 
 
 ## Usage
-* ### Segmentation map generation steps:
+* ### Segmentation map generation: 
+<p align="center">
+    <img src="https://github.com/smartslab/objectRecognitionTopologicalFeatures/blob/181f88f2f8fce88cc5bf6410580394a80e461c2d/segmentationMapGeneration.png" width="840"> <br />
+    <em> Pipeline of segmentation map generation module</em>
+</p>
+
+
+
 1. Install the Deeplab implementation available through Tensorflow models following the installation instructions. [here](https://github.com/tensorflow/models/blob/master/research/deeplab/g3doc/installation.md) 
 2. Under the tensorflow/models/resarch/deeplab directory create the following recommended directory structure. (The files train_uwis.sh, export_uwis.sh, and convert_uwis.sh can be found under the segMapUtils folder in this repository.)
 
@@ -44,7 +51,13 @@ At this stage, object segmentation maps would have the following filename struct
 
 `<sceneImageName>_<cropId>_cropped_obj<category id>.png`.
 
-* ### Persistent feature extraction and recognition steps:
+* ### Persistent feature extraction and recognition:
+
+<p align="center">
+    <img src="https://github.com/smartslab/objectRecognitionTopologicalFeatures/blob/181f88f2f8fce88cc5bf6410580394a80e461c2d/recognitionUsingPersistenceFeatures.png" width="840"> <br />
+    <em> Pipeline for object recognition using persistent features </em>
+</p>
+
   All the steps below refer to code files under persistentFeatures.
 1. Generate persistence diagrams for the object segmentation maps using generatePDs.py 
 2. To generate sparse PI features from the persistence diagrams run generatePIs.py followed by sparseSamplingPIs.py. Alternatively generate amplitude features using generateAmplitude.py
