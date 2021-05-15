@@ -60,7 +60,7 @@ At this stage, object segmentation maps would have the following filename struct
 
   All the steps below refer to code files under the `persistentFeatRecognit` folder in this repository.
 1. Generate persistence diagrams for the object segmentation maps using `generatePDs.py`
-2. To generate sparse PI features from the persistence diagrams run `generatePIs.py` followed by `sparseSamplingPIs.py`. Alternatively generate amplitude features using `generateAmplitude.py`
+2. To generate sparse PI features from the persistence diagrams, run `generatePIs.py` followed by `sparseSamplingPIs.py`. Alternatively generate amplitude features using `generateAmplitude.py`
 3. Train recognition network for sparse PI features using `trainRecognitSparsePI.py`. Alternatively, train recognition network for amplitude features using `trainRecognitAmplitude.py`
-4. To test the performance of the recognition networks in the same environment that they are trained on use `predictFromSparsePIs_test_trainEnv.py` or `predictFromAmplitude_test_trainEnv.py` as appropriate.
-5. To test the performance of the recognition networks in unseen environments use `predictFromSparsePIs_test_testEnv.py` or `predictFromAmplitude_test_testEnv.py `as appropriate.
+4. To test the performance of the recognition networks in the same environment that they are trained on, use `predictFromSparsePIs_test_trainEnv.py` or `predictFromAmplitude_test_trainEnv.py` as appropriate.
+5. To test the performance of the recognition networks in unseen environments, use `predictFromSparsePIs_test_testEnv.py` or `predictFromAmplitude_test_testEnv.py `as appropriate.
