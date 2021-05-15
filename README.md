@@ -56,7 +56,7 @@ At this stage, object segmentation maps would have the following filename struct
 
 <p align="center">
     <img src="https://github.com/smartslab/objectRecognitionTopologicalFeatures/blob/181f88f2f8fce88cc5bf6410580394a80e461c2d/recognitionUsingPersistenceFeatures.png" width="840"> <br />
-    <em> Pipeline for object recognition using persistent features </em>
+    <em> Pipeline for object recognition using sparse PI features </em>
 </p>
 
   All the steps below refer to code files under the `persistentFeatRecognit` folder in this repository.
