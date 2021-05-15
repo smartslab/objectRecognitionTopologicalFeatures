@@ -48,9 +48,9 @@ The UW Indoor Scenes (UW-IS) dataset used in the above paper can be found [here]
 9. Use `segMapUtils/cropPredsObjectWise.py` to obtain cropped object images from the scene segmentation map.
 10. Run `loadmodel_inference.py` again (using the same trained model) to generate object segmentatipn maps for all the cropped object images.
 
-At this stage, object segmentation maps would have the following filename structure `<sceneImageName>_<cropId>_cropped.png`. Before moving to the next step, all the object segmentation maps are to be labeled with appropriate category id for training the recognition networks. The steps in persistent features extraction and recognition assume the following filename structure for object segmentation maps:
+At this stage, object segmentation maps would have the following filename structure `<sceneImageName>_<cropId>_cropped.png`. Before moving to the next step, all the object segmentation maps are to be labeled with appropriate object class id for training the recognition networks. The steps in persistent features extraction and recognition assume the following filename structure for object segmentation maps:
 
-`<sceneImageName>_<cropId>_cropped_obj<category id>.png`.
+`<sceneImageName>_<cropId>_cropped_obj<classId>.png`.
 
 * ### Persistent feature extraction and recognition:
 
