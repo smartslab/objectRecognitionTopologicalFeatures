@@ -21,7 +21,7 @@ The UW Indoor Scenes (UW-IS) dataset used in the above paper can be found [here]
 
 
 
-1. Install the Deeplab implementation available through Tensorflow models following the installation instructions. [here](https://github.com/tensorflow/models/blob/master/research/deeplab/g3doc/installation.md) 
+1. Install the DeepLabv3+ implementation available through Tensorflow models following the installation instructions. [here](https://github.com/tensorflow/models/blob/master/research/deeplab/g3doc/installation.md) 
 2. Under the `tensorflow/models/resarch/deeplab` directory create the following recommended directory structure. (The files `train_uwis.sh`, `export_uwis.sh`, and `convert_uwis.sh` can be found under the `segMapUtils` folder in this repository.)
 
 ```
