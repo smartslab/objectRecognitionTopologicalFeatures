@@ -58,7 +58,7 @@ At this stage, object segmentation maps would have the following filename struct
     <em> Pipeline for object recognition using persistent features </em>
 </p>
 
-  All the steps below refer to code files under persistentFeatures.
+  All the steps below refer to code files under persistentFeaturesRecognition.
 1. Generate persistence diagrams for the object segmentation maps using generatePDs.py 
 2. To generate sparse PI features from the persistence diagrams run generatePIs.py followed by sparseSamplingPIs.py. Alternatively generate amplitude features using generateAmplitude.py
 3. Train recognition network for sparse PI features using trainRecognitSparsePI.py. Alternatively, train recognition network for amplitude features using trainRecognitAmplitude.py
