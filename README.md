@@ -22,7 +22,7 @@ The UW Indoor Scenes (UW-IS) dataset used in the above paper can be found [here]
 
 
 1. Install the Deeplab implementation available through Tensorflow models following the installation instructions. [here](https://github.com/tensorflow/models/blob/master/research/deeplab/g3doc/installation.md) 
-2. Under the tensorflow/models/resarch/deeplab directory create the following recommended directory structure. (The files train_uwis.sh, export_uwis.sh, and convert_uwis.sh can be found under the segMapUtils folder in this repository.)
+2. Under the `tensorflow/models/resarch/deeplab` directory create the following recommended directory structure. (The files `train_uwis.sh`, `export_uwis.sh`, and `convert_uwis.sh` can be found under the `segMapUtils` folder in this repository.)
 
 ```
 + deeplab
@@ -58,7 +58,7 @@ At this stage, object segmentation maps would have the following filename struct
     <em> Pipeline for object recognition using persistent features </em>
 </p>
 
-  All the steps below refer to code files under persistentFeatRecognit.
+  All the steps below refer to code files under the `persistentFeatRecognit` folder in this repository.
 1. Generate persistence diagrams for the object segmentation maps using `generatePDs.py`
 2. To generate sparse PI features from the persistence diagrams run `generatePIs.py` followed by `sparseSamplingPIs.py`. Alternatively generate amplitude features using `generateAmplitude.py`
 3. Train recognition network for sparse PI features using `trainRecognitSparsePI.py`. Alternatively, train recognition network for amplitude features using `trainRecognitAmplitude.py`
